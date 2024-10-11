@@ -1,0 +1,27 @@
+.sidebar {
+  display: flex;
+  position: relative;
+}
+
+choco-list {
+  text-decoration: none;
+  list-style: none;
+  font-size: 1px;
+  margin-right: 20px;
+}
+
+.choco-ul {
+  list-style: none;
+}
+
+.line {
+  width: 1px; /* Thin line */
+  height: 100%; /* Full height of the sidebar */
+  background-color: rgb(216, 216, 216); /* Line color */
+  margin-top: 0px; /* Adjust if necessary */
+  margin-right: 2px;
+  position: absolute;
+  right: -81px;
+  color: #999;
+  font-weight: 100;
+}

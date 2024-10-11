@@ -1,0 +1,96 @@
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+    /* border:5px solid blue; */
+    width:800px;
+    margin-left: 130px;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-bottom: 0;
+     */
+     padding-bottom: 0px;
+
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .promo-content {
+    width: 50%;
+    /* border:5px solid yellow; */
+  }
+  
+  .promo-content h5 {
+    font-size: 18px;
+    color: #c5c5c5;
+  }
+  
+  .promo-content h2 {
+    font-size: 36px;
+    margin: 10px 0;
+  }
+  
+  .shop-now {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: -300px;
+  }
+  
+  .carousel-dots {
+    margin-top: 20px;
+  }
+  
+  .carousel-dots .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  .carousel-dots .dot.active {
+    background-color: red;
+  }
+  .promo-image{
+    /* border: 5px solid red; */
+    width:50px;
+    
+  }
+
+  .chocoLogo {
+    width: 45px;
+    height: 45px;
+  }
+  .chocoDiv {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  
+  
+  .promo-image img {
+    max-width: 100%;
+    border-radius: 5px;
+    height:262px;
+    width:980px;
+    top:214px;
+    right:867px;
+  }
+  

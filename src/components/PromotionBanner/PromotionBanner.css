@@ -1,0 +1,85 @@
+.promotion-banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #000;
+    color: white;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 70px;
+  }
+
+  .texts h2 {
+    margin: 0; /* Removes the default margin */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0; /* Removes any padding if present */
+    line-height: 0.5; /* Adjust the space between lines of text */
+  }
+  
+
+  .Categories{
+    color:green;
+  }
+
+  .texts{
+    gap:4px;
+  }
+  
+  .promo-text {
+    max-width: 50%;
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+    /* height: 10px; */
+  }
+  
+  .promo-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .promo-timer {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+  
+  .circle span {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .circle p {
+    font-size: 12px;
+    margin: 0;
+    color: gray;
+  }
+  
+  .buy-now-btn {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .promo-image {
+    width: 50%;
+    height:300px;
+    padding-right: 40px;
+    padding-top: 20px;
+  }
+  

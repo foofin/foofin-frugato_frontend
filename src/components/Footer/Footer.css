@@ -1,0 +1,103 @@
+.footer {
+  background-color: #000;
+  color: white;
+  padding: 40px;
+  /* margin-left: 300px; */
+}
+
+.FooterContainer{
+  margin-left: 70px;
+  margin-right: -110px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  /* margin-right: 30px; */
+  /* margin-left: 300px; */
+}
+
+.footer-section h4 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.newsletter-form button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.qr-code {
+  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+}
+
+.app-store-buttons img {
+  width: 120px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom{
+  margin: 0;
+  display: flex;align-items: center;justify-content: center;
+  
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+}
+
+.social-icons a:hover {
+  color: #ddd;
+}

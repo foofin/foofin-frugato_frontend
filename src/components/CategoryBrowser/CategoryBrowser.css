@@ -1,0 +1,40 @@
+.category-browser {
+    /* text-align: center; */
+    margin-bottom: 30px;
+    margin-left: 40px;
+    margin-right: 100px;
+  }
+  
+  .categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .BrowseCategories{
+    margin-left: 20px;
+  }
+  
+  .category-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width:150px;
+    transition: all 0.3s ease;
+  }
+  
+  .category-item.active {
+    background-color: red;
+    color: white;
+  }
+  
+  .category-item img {
+    display: block;
+    margin: 0 auto 5px;
+    width: 40px;
+    height: auto;
+  }
+  
