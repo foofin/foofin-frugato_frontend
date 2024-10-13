@@ -15,6 +15,7 @@ import Serices from './components/Serices/serices'
 import Footer from './components/Footer/Footer'
 import SignUp from './pages/SignUp/SignUp'
 import Login from './pages/Login/Login'
+import Wishlist from './components/Wishlist/Wishlist'
 
 
 
@@ -25,14 +26,15 @@ const App = () => {
       <Navbar/>
       {/* <SignUp/> */}
       {/* <Login/> */}
-      <ChocolatesPage/>
-      <FlashSale/>
-      <CategoryBrowser/>
-      <BestSellingProducts/>
-      <PromotionBanner/>
+      {/* <ChocolatesPage/> */}
+      {/* <FlashSale/> */}
+      {/* <CategoryBrowser/> */}
+      {/* <BestSellingProducts/> */}
+      {/* <PromotionBanner/>
       <ExploreProducts/>
       <NewArrival/>
-      <Serices/>
+      <Serices/> */}
+      <Wishlist/>
       <Footer/> 
     </div>
   )
