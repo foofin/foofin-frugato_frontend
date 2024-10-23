@@ -1,121 +1,169 @@
 .login-container {
-    display: flex;
-    justify-content: space-between;
-    height: 100vh;
-    align-items: center;
-    padding: 0 50px;
-    /* border:5px solid red; */
+  display: flex;
+  justify-content: space-between;
+  height: 100vh; /* Full height for the container */
+  align-items: center;
+  padding: 0 50px;
+  max-width: 1200px; /* Limit max width for better layout on large screens */
+  margin: 0 auto; /* Center the container */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image {
+  max-width: 100%;
+  height: 500px; /* Fixed height for image */
+  object-fit: cover; /* Ensures image covers the container */
+}
+
+.loginforgot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Adds space above forgot password link */
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formWrapper {
+  padding: 100px;
+}
+
+/* Input styling */
+.form-input {
+  border: none;
+  border-bottom: 2px solid gray; /* Underline styling */
+  outline: none;
+  padding: 8px 0;
+  margin-bottom: 20px; /* Adds spacing between inputs */
+  width: 100%; /* Ensures input takes up full width */
+  font-size: 16px; /* Set a consistent font size */
+}
+
+.form-input:focus {
+  border-bottom: 2px solid blue; /* Changes underline color on focus */
+}
+
+/* Button styling */
+.loginbutton {
+  background-color: #ff4b4b; /* Main button color */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 16px;
+  width: 100px; /* Fixed width for consistency */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.loginbutton:hover {
+  background-color: #e63939; /* Darker shade on hover */
+}
+
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* White background for Google button */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: border-color 0.3s; /* Transition for border color */
+}
+
+.google-login-button:hover {
+  border-color: #ff4b4b; /* Change border color on hover */
+}
+
+.google-icon {
+  width: 20px; /* Size for the Google icon */
+  margin-right: 8px; /* Spacing between icon and text */
+}
+
+.loginlink {
+  margin-top: 15px;
+  color: red; /* Color for the login link */
+}
+
+.login-link a {
+  color: #ff4b4b; /* Link color */
+  text-decoration: none;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .login-container {
+      flex-direction: column; /* Stack image and form on smaller screens */
+      align-items: center; /* Center align the content */
+      padding: 20px; /* Reduce padding on smaller screens */
   }
-  
-  .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .formWrapper {
+      padding: 40px; /* Reduce padding for form wrapper */
   }
-  
+
   .login-image {
-    max-width: 100%;
-    height: 500px;
-    object-fit: cover;
-    
+      height: 300px; /* Adjust height for smaller screens */
   }
+}
 
-  .loginforgot{
-    /* border:5px solid red; */
-    display: flex;
-    /* align-items: center; */
-    justify-content:space-between;
-    /* flex-direction: column; */
-  }
-  
-  .form-container {
-    flex: 1;
-    padding: 20px;
-    /* border:5px solid green; */
-    /* margin-left: 20px; */
-    /* width:100px;
-     */
+.password-container {
+  position: relative; /* To position the eye icon inside the input */
+}
 
-  }
-  
-  /* h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-  } */
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    /* padding: 40px;;
-     */
-     /* margin-left: 20px; */
-  }
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+.loginbutton {
+  background-color: #ff4b4b;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 16px;
+  width: 100px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .formWrapper{
-    padding: 100px;
-  }
-  
-  /* .form-input {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  } */
+.loginbutton:hover {
+  background-color: #e63939;
+  transform: scale(1.1); /* Larger button on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
 
-
+/* For mobile screens */
+@media (max-width: 480px) {
   .form-input {
-    border: none;
-    border-bottom: 2px solid gray;
-    outline: none;
-    padding: 8px 0;
-    margin-bottom: 20px; /* Adds spacing between inputs */
-    width: 100%; /* Ensures input takes up full width */
+      font-size: 14px; /* Smaller font size for mobile inputs */
   }
-  
-  .form-input:focus {
-    border-bottom: 2px solid blue; /* Changes underline color on focus */
-  }
-  
-  
-  .loginbutton {
-    background-color: #ff4b4b;
-    color: white;
-    padding: 12px;
-    /* margin-left: 20px; */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    font-size: 16px;
-    width: 100px;;
-  }
-  
+
+  .loginbutton,
   .google-login-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+      width: 100%; /* Full width buttons on mobile */
   }
-  
-  .google-icon {
-    width: 20px;
-    margin-right: 8px;
-  }
-  
-  .loginlink {
-    margin-top: 15px;
-    color:red;
-  }
-  
-  .login-link a {
-    color: #ff4b4b;
-    text-decoration: none;
-  }
-  
+}

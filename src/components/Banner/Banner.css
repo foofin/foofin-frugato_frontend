@@ -1,13 +1,13 @@
-/* Import the Poppins font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 /* Wrapper for the banner */
-
 .banner-wrapper {
-  background-color: black;
+  background-color: #6f4e37;
   display: flex;
   justify-content: center;
-  width:100vw;
+  width: 100vw;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Container for the banner content */
@@ -26,39 +26,29 @@
 /* Center content for sale text and shop now */
 .center-content {
   position: absolute;
-  left: 49%;
+  left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 20px; /* Space between "sale text" and "Shop Now" */
+  gap: 20px; 
 }
 
-/* Sale text styling with Poppins font */
+/* Sale text styling */
 .sale-text {
   color: white;
   font-size: 12px;
   margin: 0;
-  font-family: 'Poppins', sans-serif; /* Apply Poppins font here */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
-/* ShopNow button styling with underline */
-.shop--now {
+/* Shop Now button */
+.shop-now {
   color: white;
   font-size: 15px;
-  /* display: flex;align-items: center; */
-  /* justify-content: center; */
   font-weight: bold;
-  text-decoration: underline; 
-  /* text-decoration-color: white; */
-  /* text-decoration-thickness: 2px; */
-  /* text-decoration-skip-ink: none; */
-  /* text-decoration-offset: 3px; */
-  /* border: 5px solid red; */
-  /* font-family: 'Poppins', sans-serif; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Right-aligned language selection */
@@ -68,18 +58,55 @@
   align-items: center;
   color: white;
   font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  margin-right: 73px;
+  font-family: "Poppins", sans-serif;
 }
 
-.language-text{
+.language-text {
   margin-right: 5px;
-  font-weight: 5;
+  font-weight: 500;
 }
 
-/* Dropdown arrow styling */
-.arrow-down {
-  margin-left: 5px;
-  font-size: 10px;
-  color: white;
+/* Responsive Styling */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .center-content {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .sale-text {
+    font-size: 10px;
+  }
+
+  .shop-now {
+    font-size: 13px;
+  }
+
+  .language-select {
+    display: none; /* Hide language select on tablets and smaller screens */
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+  .banner-container {
+    padding: 5px;
+  }
+
+  .sale-text {
+    font-size: 9px;
+  }
+
+  .shop-now {
+    font-size: 12px;
+  }
 }

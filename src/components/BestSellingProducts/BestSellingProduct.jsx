@@ -12,7 +12,7 @@ const products = [
 const BestSellingProducts = () => {
   return (
     <div className="best-selling-products">
-      <div className='redToday'>
+      <div className='redTodayBestSelling'>
        <div className='redBox'></div>
        <div className='Today'>This Month</div>
        </div>
@@ -27,8 +27,8 @@ const BestSellingProducts = () => {
             <div className="product-info">
               <h3>{product.name}</h3>
               <p>
-                <span className="price">{product.price}</span>
-                <span className="original-price">{product.originalPrice}</span>
+                <span className="price-Bestelling">{product.price}</span>
+                <span className="original-price-BestSelling">{product.originalPrice}</span>
               </p>
               <div className="rating">
                 {Array.from({ length: Math.floor(product.rating) }, (_, i) => (

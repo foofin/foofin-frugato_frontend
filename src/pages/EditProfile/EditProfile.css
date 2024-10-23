@@ -1,0 +1,187 @@
+.edit-profile-container {
+    display: flex;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Light background color */
+    max-width: 1200px; /* Limit the maximum width for better layout */
+    margin: 0 auto; /* Center the container */
+    border-radius: 8px; /* Rounded corners for the container */
+}
+
+.sidebar {
+    width: 30%; /* Increased width for sidebar */
+    padding-right: 2rem;
+    border-right: 1px solid #ccc; /* Added border for separation */
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.edit {
+    color: red;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333; /* Darker color for sidebar headings */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+    color: #555; /* Slightly darker text color */
+    transition: color 0.2s; /* Transition for hover effect */
+}
+
+.sidebar ul li:hover {
+    color: #D9534F; /* Change color on hover */
+}
+
+.profile-edit-form {
+    width: 70%; /* Set width for the form */
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: white; /* White background for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.profile-edit-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #D9534F; /* Primary color for headings */
+}
+
+.profile-edit-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem; /* Margin for spacing */
+}
+
+.form-row input {
+    width: 48%; /* Adjusted width for inputs in row */
+    padding: 0.8rem;
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 4px;
+    font-size: 0.9rem; /* Adjusted font size */
+    transition: border-color 0.2s; /* Transition for border color on focus */
+}
+
+.form-row input:focus {
+    border-color: #D9534F; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.profile-edit-form input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem; /* Consistent font size */
+}
+
+h3 {
+    font-size: 1rem;
+    margin: 1rem 0; /* Margins for spacing */
+    color: #333; /* Darker color for subheadings */
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem; /* Margin for top spacing */
+}
+
+.cancel-btn,
+.save-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 1rem;
+    font-size: 0.9rem; /* Consistent font size for buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for buttons */
+}
+
+.cancel-btn {
+    background-color: #e7e7e7; /* Light gray for cancel button */
+    color: #333; /* Darker text color */
+}
+
+.cancel-btn:hover {
+    background-color: #d3d3d3; /* Darker shade on hover */
+}
+
+.save-btn {
+    background-color: #D9534F; /* Primary color for save button */
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #c44a3e; /* Darker shade on hover */
+}
+
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem; /* Increased margin for spacing between input fields */
+}
+
+.form-row input {
+    width: 48%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    display: block; /* To ensure error messages appear below the input */
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .edit-profile-container {
+        flex-direction: column; /* Stack sidebar and form on smaller screens */
+        align-items: center; /* Center align the content */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width sidebar */
+        margin-left: 0; /* Remove left margin */
+        border-right: none; /* Remove border on smaller screens */
+        margin-bottom: 1rem; /* Space below the sidebar */
+    }
+
+    .profile-edit-form {
+        width: 100%; /* Full width form */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .profile-edit-form h2 {
+        font-size: 1.3rem; /* Smaller font size for mobile */
+    }
+
+    .sidebar h3 {
+        font-size: 1.1rem; /* Smaller font size for sidebar headings */
+    }
+
+    .cancel-btn,
+    .save-btn {
+        padding: 0.6rem 1.5rem; /* Adjust button padding for mobile */
+    }
+}

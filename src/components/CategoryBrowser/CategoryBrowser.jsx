@@ -18,7 +18,7 @@ const CategoryBrowser = () => {
     <div className="category-browser">
       <div className='redToday'>
        <div className='redBox'></div>
-       <div className='Today'>Categoriess</div>
+       <div className='Today'>Categories</div>
        </div>
        <div className='BrowseCategories'>
        <h2>Browse By Category</h2>

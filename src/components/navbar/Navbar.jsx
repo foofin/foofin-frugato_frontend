@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import './Navbar.css';
-import { FiSearch, FiHeart, FiShoppingCart, FiUser } from 'react-icons/fi';
+import React, { useState } from "react";
+import "./Navbar.css";
+import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,15 +11,15 @@ const Navbar = () => {
   };
 
   const closeDropdown = (event) => {
-    if (!event.target.closest('.account-btn')) {
+    if (!event.target.closest(".account-btn")) {
       setDropdownOpen(false);
     }
   };
 
   React.useEffect(() => {
-    window.addEventListener('click', closeDropdown);
+    window.addEventListener("click", closeDropdown);
     return () => {
-      window.removeEventListener('click', closeDropdown);
+      window.removeEventListener("click", closeDropdown);
     };
   }, []);
 
@@ -28,19 +29,34 @@ const Navbar = () => {
         <p>Frugato</p>
       </div>
       <ul className="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/signup">Sign Up</a></li>
+        <li>
+          <Link to="/">Home</Link>
+          {/* <a href="/"></a> */}
+        </li>
+        <li>
+        <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+        <Link to="/about">About</Link>
+        </li>
+        <li>
+        <Link to="/signup">Signup</Link>
+        </li>
       </ul>
       <div className="nav-icons">
         <div className="search-bar">
-          <div><input type="text" placeholder="What are you looking for?" /></div>
-          <div className='searchDiv'><FiSearch size="15px" className="icon"/></div>
+          <div>
+            <input type="text" placeholder="What are you looking for?" />
+          </div>
+          <div className="searchDiv">
+            <FiSearch size="15px" className="icon" />
+          </div>
         </div>
-        <div className='TwoIcons'>
+        <div className="TwoIcons">
           <FiHeart size="15px" className="iconH" />
-          <FiShoppingCart size="15px" className="iconC" />
+          <Link to="/cart">
+            <FiShoppingCart size="15px" className="iconC" />
+          </Link>
         </div>
 
         {/* Account Icon with Dropdown */}
@@ -48,7 +64,7 @@ const Navbar = () => {
           <FiUser size="20px" className="iconA" />
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <a href="#">Manage My Account</a>
+              <Link to="/account">Manage My Account</Link>
               <a href="#">My Orders</a>
               <a href="#">My Cancellations</a>
               <a href="#">My Reviews</a>

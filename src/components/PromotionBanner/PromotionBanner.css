@@ -1,85 +1,136 @@
 .promotion-banner {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    background-color: #000;
-    color: white;
-    margin-top: 30px;
-    margin-left: 60px;
-    margin-right: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #000;
+  color: white;
+  margin: 30px auto; /* Center the banner with auto margins */
+  max-width: 1200px; /* Limit the maximum width */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  margin-left: 85px;
+    margin-right: 75px;
+}
+
+.texts h2 {
+  margin: 0; /* Removes the default margin */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0; /* Removes any padding if present */
+  line-height: 1.2; /* Adjust line height for better readability */
+}
+
+.Categories {
+  color: green;
+}
+
+.texts {
+  display: flex; /* Ensure proper alignment */
+  flex-direction: column; /* Stack text elements vertically */
+  gap: 4px; /* Space between text elements */
+}
+
+.promo-text {
+  max-width: 50%; /* Keeps the text area proportionate */
+  margin-top: 20px;
+}
+
+.promo-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.promo-timer {
+  display: flex;
+  gap: 15px; /* Space between timer elements */
+  margin-bottom: 20px;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.circle span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.circle p {
+  font-size: 12px;
+  margin: 0;
+  color: gray;
+}
+
+.buy-now-btn {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for buttons */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.buy-now-btn:hover {
+  background-color: darkgreen; /* Darker shade on hover */
+}
+
+.promo-image {
+  width: 50%;
+  height: 300px;
+  padding-right: 40px;
+  padding-top: 20px;
+  overflow: hidden; /* Prevents overflow if image exceeds dimensions */
+}
+
+.promo-image img {
+  width: 100%; /* Responsive image width */
+  height: 100%; /* Maintain height */
+  object-fit: cover; /* Crop image to fill space */
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .promotion-banner {
+      flex-direction: column; /* Stack elements on smaller screens */
+      align-items: center; /* Center align items */
+      padding: 20px; /* Reduce padding */
   }
 
-  .texts h2 {
-    margin: 0; /* Removes the default margin */
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 0; /* Removes any padding if present */
-    line-height: 0.5; /* Adjust the space between lines of text */
-  }
-  
-
-  .Categories{
-    color:green;
-  }
-
-  .texts{
-    gap:4px;
-  }
-  
   .promo-text {
-    max-width: 50%;
-    margin-top: 20px;
-    /* margin-bottom: 10px; */
-    /* height: 10px; */
+      max-width: 90%; /* Full width on smaller screens */
+      text-align: center; /* Center align text */
   }
-  
-  .promo-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .promo-timer {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .circle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    color: black;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    font-size: 20px;
-  }
-  
-  .circle span {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .circle p {
-    font-size: 12px;
-    margin: 0;
-    color: gray;
-  }
-  
-  .buy-now-btn {
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+
   .promo-image {
-    width: 50%;
-    height:300px;
-    padding-right: 40px;
-    padding-top: 20px;
+      width: 100%; /* Full width for image */
+      padding-right: 0; /* Remove right padding */
+      padding-top: 10px; /* Reduce top padding */
   }
-  
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .promo-text h2 {
+      font-size: 28px; /* Smaller font size for mobile */
+  }
+
+  .circle {
+      width: 60px; /* Smaller circles for mobile */
+      height: 60px;
+  }
+
+  .circle span {
+      font-size: 20px; /* Adjust font size */
+  }
+}

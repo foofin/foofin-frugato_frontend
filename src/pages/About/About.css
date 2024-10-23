@@ -1,0 +1,94 @@
+.about-page {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.our-story {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-left: 65px;
+  margin-right: 45px;
+  gap:30px;
+}
+
+.story-text {
+  max-width: 50%;
+}
+
+.story-text h1 {
+  font-size: 2.5rem; /* Make the heading larger */
+  font-weight: bold; /* Make the heading bold */
+  color: #333; /* Optional: Change color for better aesthetics */
+  /* text-transform: uppercase; Optional: Make it uppercase for a stylish look */
+  letter-spacing: 1px; /* Optional: Add some letter spacing */
+}
+
+.story-text p {
+  font-size: 0.9rem; /* Make the paragraph smaller */
+  line-height: 1.5; /* Increase line height for better readability */
+  color: #666; /* Optional: Change color for better aesthetics */
+}
+
+.story-image {
+  flex: 1; /* Allow the image container to grow */
+  display: flex; /* Use flexbox for the image */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
+.story-image img {
+  width: 100%; /* Ensure the image takes the full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 1rem;
+  border: 0.5px solid grey;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.stat-box:hover {
+  background-color: #f53b57; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  border-radius: 10px; /* Apply border-radius on hover */
+}
+
+.team {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.info-box h5 {
+  margin: 0;
+}

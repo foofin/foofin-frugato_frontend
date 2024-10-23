@@ -1,0 +1,117 @@
+/* Container */
+.contact-page {
+  padding: 3rem;
+  font-family: Arial, sans-serif;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left Section (Contact Info) */
+.contact-info {
+  width: 35%;
+  padding-right: 2rem;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.contact-info p strong {
+  font-weight: bold;
+}
+
+/* Right Section (Form) */
+.contact-form {
+  width: 60%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flexbox for inputs (name, email, phone) */
+.flex-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.flex-inputs input {
+  width: 30%; /* Maintain width of inputs */
+  background-color: #f0f0f0; /* Set grey background */
+}
+
+/* Input and textarea styling */
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  background-color: #f0f0f0; /* Grey background */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #ff4b4b;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: #e63939;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .contact-info {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .flex-inputs {
+    flex-direction: column;
+  }
+  .separator {
+    height: 2px; /* Height of the line */
+    background-color: #ccc; /* Color of the line */
+    margin: 1rem 0; /* Spacing around the line */
+    width: 100%; /* Make the line full width */
+  }
+  
+  .flex-inputs input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
