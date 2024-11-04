@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import CSS for toast
 import "./FlashSale.css";
 import chocolate from "../../assets/chocolate.jpeg";
 
@@ -78,8 +80,17 @@ const FlashSale = () => {
     },
   ];
 
+  // Add this function to handle adding to cart
+  const handleAddToCart = (productName) => {
+    toast.success(`${productName} added to cart successfully!`, {
+      position: "bottom-right", // Ensure position is correct
+      autoClose: 3000,
+    });
+  };
+
   return (
     <div className="flash-sale">
+      <ToastContainer /> {/* Ensure this is included */}
       <div className="redToday">
         <div className="redBox"></div>
         <div className="Today">Today's</div>
@@ -87,16 +98,28 @@ const FlashSale = () => {
       <div className="FlashSaleWithTimerX">
         <h2>Flash Sales</h2>
         <div className="timer">
-          <span>{String(timer.days).padStart(2, "0")} : </span>
-          <span>{String(timer.hours).padStart(2, "0")} : </span>
-          <span>{String(timer.minutes).padStart(2, "0")} : </span>
-          <span>{String(timer.seconds).padStart(2, "0")}</span>
+          <div className="time-section">
+            <div className="time-label">Day</div>
+            <span>{String(timer.days).padStart(2, "0")}</span>
+          </div>
+          <div className="time-section">
+            <div className="time-label">Hrs</div>
+            <span>{String(timer.hours).padStart(2, "0")}</span>
+          </div>
+          <div className="time-section">
+            <div className="time-label">Mins</div>
+            <span>{String(timer.minutes).padStart(2, "0")}</span>
+          </div>
+          <div className="time-section">
+            <div className="time-label">Secs</div>
+            <span>{String(timer.seconds).padStart(2, "0")}</span>
+          </div>
         </div>
       </div>
 
       <div className="products">
         {products.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product.id} product={product} onAddToCart={handleAddToCart} />
         ))}
       </div>
       <div className="viewAllDiv">
@@ -106,7 +129,7 @@ const FlashSale = () => {
   );
 };
 
-const Product = ({ product }) => {
+const Product = ({ product, onAddToCart }) => {
   return (
     <div className="product-card">
       <Link to="/productdetails">
@@ -130,7 +153,7 @@ const Product = ({ product }) => {
           </div>
         </div>
       </Link>
-      <button className="add-to-carts">Add To Cart</button>
+      <button className="add-to-carts" onClick={() => onAddToCart(product.name)}>Add To Cart</button>
     </div>
   );
 };

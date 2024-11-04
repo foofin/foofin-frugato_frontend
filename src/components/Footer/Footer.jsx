@@ -9,7 +9,7 @@ const Footer = () => {
           <h4>Fruogato</h4>
           <p>Get 10% off your first order</p>
           <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
+            {/* <input type="email" placeholder="Enter your email" /> */}
             {/* <button type="submit">Subscribe</button> */}
           </form>
         </div>
@@ -30,7 +30,7 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li><a href="/about">About</a></li>
-            <li><a href="/shop">Shop</a></li>
+            {/* <li><a href="/shop">Shop</a></li> */}
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>

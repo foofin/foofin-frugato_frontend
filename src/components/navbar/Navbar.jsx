@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="TwoIcons">
-          <FiHeart size="15px" className="iconH" />
+          {/* <FiHeart size="15px" className="iconH" /> */}
           <Link to="/cart">
             <FiShoppingCart size="15px" className="iconC" />
           </Link>

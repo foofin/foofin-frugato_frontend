@@ -22,12 +22,12 @@ const Home = () => {
       <Navbar/> 
       <ChocolatesPage/>
       <FlashSale/>
-      <CategoryBrowser/>
+      {/* <CategoryBrowser/> */}
       <BestSellingProducts/>
       <PromotionBanner/>
       {/* <ExploreProducts/> */}
       {/* <NewArrival/> */}
-      <Serices/> 
+      {/* <Serices/>  */}
       <Footer/> 
     </div>
   )

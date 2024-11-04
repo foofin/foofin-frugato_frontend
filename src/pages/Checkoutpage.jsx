@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../components/Banner/Banner'
-import Navbar from '../components/navbar/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 import Checkout from '../components/Checkout/Checkout'
 import Footer from '../components/Footer/Footer'
 

@@ -9,7 +9,7 @@ import PromoCarousel from '../PromoCarousel/PromoCarousel';
 const ChocolatesPage = () => {
   return (
     <div className="chocolates-page">
-      <ChocolatesSidebar/>
+      {/* <ChocolatesSidebar/> */}
       <PromoCarousel/>
     </div>
   );

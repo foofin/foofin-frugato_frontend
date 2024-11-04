@@ -37,8 +37,8 @@
 
 /* Input styling */
 .form-input {
-  border: none;
-  border-bottom: 2px solid gray; /* Underline styling */
+  border: none; /* Default input border styling */
+  border-bottom: 2px solid gray; /* Retain bottom border for other inputs */
   outline: none;
   padding: 8px 0;
   margin-bottom: 20px; /* Adds spacing between inputs */
@@ -46,6 +46,17 @@
   font-size: 18px; /* Set a larger, consistent font size */
 }
 
+/* Specific styling for the phone number input */
+.phone-input {
+  border: none; /* Remove all borders */
+  outline: none; /* Remove outline */
+}
+.phone-input input {
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove shadow */
+  padding: 8px 0; /* Adjust padding */
+}
 /* Error message styling */
 .error-message {
   color: red; /* Red color for error messages */
@@ -82,7 +93,7 @@
   position: absolute;
   right: 10px; /* Adjust as necessary for spacing */
   cursor: pointer;
-  top:10px;
+  top: 10px;
   font-size: 18px; /* Adjust the size of the eye icon */
   color: gray; /* Adjust the color of the eye icon */
 }
@@ -90,31 +101,6 @@
 /* Optional hover effect for eye icon */
 .eye-icon:hover {
   color: black; /* Change color on hover */
-}
-
-
-.google-signup-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff; /* White background for Google button */
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 18px; /* Increase font size */
-  transition: border-color 0.3s, transform 0.3s; /* Transition for border color */
-}
-
-.google-signup-button:hover {
-  border-color: #ff4b4b; /* Change border color on hover */
-  transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-.google-icon {
-  width: 30px; /* Increased size for the Google icon */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 8px; /* Spacing between icon and text */
 }
 
 .login-link {
@@ -151,8 +137,7 @@
     font-size: 16px; /* Smaller font size for mobile inputs */
   }
 
-  .create-account-button,
-  .google-signup-button {
+  .create-account-button {
     width: 100%; /* Full width buttons on mobile */
   }
 }

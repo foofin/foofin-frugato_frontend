@@ -61,7 +61,7 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faPhone} style={{ marginRight: '0.5rem' }} />
                 Call To Us
               </h3>
-              <p>We are available 24/7, 7 days a week</p>
+              {/* <p>We are available 24/7, 7 days a week</p> */}
               <p style={{ fontWeight: 'bold' }}>Phone: +908977777222</p>
             </div>
 
@@ -74,7 +74,9 @@ const Contact = () => {
                 Write To Us
               </h3>
               <p>Fill out our form and we will contact you within 24 hours.</p>
-              <p style={{ fontWeight: 'bold' }}>Email: support@fugasoft.com</p>
+              <p style={{ fontWeight: 'bold' }}>
+                Email: <a href="mailto:support@fugasoft.com" style={{ color: '#ff4b4b', textDecoration: 'none' }}>support@fugasoft.com</a>
+              </p>
             </div>
           </div>
 
@@ -84,7 +86,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name *"
+                  placeholder=" Enter your Name *"
                   value={form.name}
                   onChange={handleChange}
                   required
@@ -93,7 +95,7 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Your Email *"
+                  placeholder="Enter your Email *"
                   value={form.email}
                   onChange={handleChange}
                   required
@@ -102,7 +104,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="phone"
-                  placeholder="Your Phone *"
+                  placeholder="Enter your Phone *"
                   value={form.phone}
                   onChange={handleChange}
                   required
@@ -115,7 +117,7 @@ const Contact = () => {
 
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Write Your Query"
                 value={form.message}
                 onChange={handleChange}
                 rows="5"

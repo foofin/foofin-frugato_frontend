@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
-import './Login.css'; // Create and import your CSS file here
-import TwoPeoples from "../../assets/TwoPeoples.png";
+import 'react-phone-number-input/style.css'; // Import CSS for phone number input
+import PhoneInput from 'react-phone-number-input';
+import './Login.css';
+import TwoPeoples from '../../assets/TwoPeoples.png';
 import Banner from '../../components/Banner/Banner';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    emailOrPhone: '',
+    phoneNumber: '',
     password: ''
   });
   const [errors, setErrors] = useState({});
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  // Form validation logic
   const validate = () => {
     const newErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10}$/;
+    const phoneRegex = /^[+]*[91]{2}[0-9]{10}$/; // Adjusted regex for country code
 
-    if (!formData.emailOrPhone.trim()) {
-      newErrors.emailOrPhone = 'Email or Phone Number is required';
-    } else if (!emailRegex.test(formData.emailOrPhone) && !phoneRegex.test(formData.emailOrPhone)) {
-      newErrors.emailOrPhone = 'Enter a valid email or phone number';
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = 'Phone Number is required';
+    } else if (!phoneRegex.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = 'Enter a valid phone number of 10 digits';
     }
 
     if (!formData.password.trim()) {
@@ -40,7 +41,10 @@ const Login = () => {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
       console.log('Login Successful', formData);
-      navigate('/');
+      toast.success('Login successful!'); // Show success toast
+      setTimeout(() => {
+        navigate('/'); // Redirect after 3 seconds
+      }, 3000);
     } else {
       setErrors(validationErrors);
     }
@@ -60,11 +64,7 @@ const Login = () => {
       <Navbar />
       <div className="login-container">
         <div className="image-container">
-          <img
-            src={TwoPeoples}
-            alt="Two people interacting"
-            className="login-image"
-          />
+          <img src={TwoPeoples} alt="Two people interacting" className="login-image" />
         </div>
 
         <div className="form-container">
@@ -73,19 +73,21 @@ const Login = () => {
             <p>Enter your details below</p>
 
             <form className="login-form" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="emailOrPhone"
-                placeholder="Email or Phone Number"
-                className="form-input"
-                value={formData.emailOrPhone}
-                onChange={handleChange}
+              <PhoneInput
+                defaultCountry="IN"
+                international
+                countryCallingCodeEditable={false}
+                placeholder="Phone Number"
+                className="form-input phone-input"
+                value={formData.phoneNumber}
+                onChange={(value) => setFormData({ ...formData, phoneNumber: value })}
+                countries={['IN']}
               />
-              {errors.emailOrPhone && <p className="error-message">{errors.emailOrPhone}</p>}
+              {errors.phoneNumber && <p className="error-message">{errors.phoneNumber}</p>}
 
               <div className="password-container">
                 <input
-                  type={showPassword ? "text" : "password"} // Toggle between "text" and "password"
+                  type={showPassword ? 'text' : 'password'}
                   name="password"
                   placeholder="Password"
                   className="form-input"
@@ -93,7 +95,7 @@ const Login = () => {
                   onChange={handleChange}
                 />
                 <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
-                  {showPassword ? <FaEyeSlash /> : <FaEye />} {/* Show eye or eye-slash icon */}
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
               {errors.password && <p className="error-message">{errors.password}</p>}
@@ -102,14 +104,13 @@ const Login = () => {
                 <button type="submit" className="loginbutton">
                   Login
                 </button>
-                <p className="loginlink">
-                  Forgot Password?
-                </p>
+                <p className="loginlink">Forgot Password?</p>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer /> {/* Add ToastContainer */}
       <Footer />
     </>
   );

@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
+import { ToastContainer, toast } from 'react-toastify';
 import './Checkout.css';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
     const [billingDetails, setBillingDetails] = useState({
@@ -17,6 +22,8 @@ const Checkout = () => {
     const [emailError, setEmailError] = useState('');
     const [phoneError, setPhoneError] = useState('');
     const [generalError, setGeneralError] = useState('');
+
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -39,11 +46,6 @@ const Checkout = () => {
         return emailRegex.test(email);
     };
 
-    const validatePhoneNumber = (phone) => {
-        const phoneRegex = /^\d{10}$/; // Assuming a valid phone number has exactly 10 digits
-        return phoneRegex.test(phone);
-    };
-
     const handlePlaceOrder = () => {
         const { firstName, lastName, streetAddress, city, phoneNumber, email } = billingDetails;
 
@@ -63,8 +65,8 @@ const Checkout = () => {
             setEmailError('Please enter a valid email address.');
         }
 
-        if (!validatePhoneNumber(phoneNumber)) {
-            setPhoneError('Please enter a valid phone number (10 digits).');
+        if (!phoneNumber || phoneNumber.length !== 13) {
+            setPhoneError('Please enter a valid phone number (10 digits after country code).');
         }
 
         // If there are any errors, do not proceed
@@ -74,6 +76,12 @@ const Checkout = () => {
 
         // All validations passed
         console.log('Placing Order with:', billingDetails, paymentMethod);
+
+        // Show success toast and redirect after 3 seconds
+        toast.success("Order placed successfully! 😊", {
+            onClose: () => navigate('/'), // Redirect to home after toast closes
+            autoClose: 3000,
+        });
     };
 
     return (
@@ -116,15 +124,18 @@ const Checkout = () => {
                         value={billingDetails.city}
                         onChange={handleInputChange}
                     />
-                    <input 
-                        type="text" 
-                        name="phoneNumber" 
-                        placeholder="Phone Number*" 
+
+                    <PhoneInput
+                        international
+                        defaultCountry="IN"
+                        countryCallingCodeEditable={false}
+                        placeholder="Phone Number"
                         value={billingDetails.phoneNumber}
-                        onChange={handleInputChange}
+                        onChange={(value) => setBillingDetails({ ...billingDetails, phoneNumber: value })}
+                        className="form-input phone-input"
                     />
-                    {phoneError && <p className="error-message">{phoneError}</p>} {/* Display phone number error */}
-                    
+                    {phoneError && <p className="error-message">{phoneError}</p>}
+
                     <input 
                         type="email" 
                         name="email" 
@@ -132,15 +143,9 @@ const Checkout = () => {
                         value={billingDetails.email}
                         onChange={handleInputChange}
                     />
-                    {emailError && <p className="error-message">{emailError}</p>} {/* Display email error */}
+                    {emailError && <p className="error-message">{emailError}</p>}
                     
-                    <label>
-                        <input 
-                            type="checkbox" 
-                            name="saveInfo" 
-                        /> Save this information for faster checkout next time
-                    </label>
-                    {generalError && <p className="error-message">{generalError}</p>} {/* Display general error */}
+                    {generalError && <p className="error-message">{generalError}</p>}
                 </form>
             </div>
 
@@ -187,27 +192,15 @@ const Checkout = () => {
                             onChange={handlePaymentMethodChange}
                         /> Cash on Delivery
                     </label>
-                    <div className="payment-icons">
-                        <i className="visa-icon"></i>
-                        <i className="mastercard-icon"></i>
-                        <i className="amex-icon"></i>
-                    </div>
-                </div>
-
-                <div className="coupon-section">
-                    <input 
-                        type="text" 
-                        placeholder="Coupon Code" 
-                        value={couponCode}
-                        onChange={(e) => setCouponCode(e.target.value)}
-                    />
-                    <button className="apply-coupon-btn" onClick={handleApplyCoupon}>Apply Coupon</button>
                 </div>
 
                 <button className="place-order-btn" onClick={handlePlaceOrder}>
                     Place Order
                 </button>
             </div>
+
+            {/* Toast container for displaying toast messages */}
+            <ToastContainer position="top-center" />
         </div>
     );
 };

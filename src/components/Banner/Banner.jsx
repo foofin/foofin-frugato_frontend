@@ -12,9 +12,9 @@ const Banner = () => {
           <h1 className="sale-text">
             Festival Sale for All Chocolate And Free Express Delivery - OFF 50%!
           </h1>
-          <div className="shop-now">
+          {/* <div className="shop-now">
             <h5><u>Shop Now</u></h5>
-          </div>
+          </div> */}
         </div>
         {/* Right-aligned language select dropdown */}
         <div className="language-select">

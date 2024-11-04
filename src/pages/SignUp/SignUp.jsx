@@ -5,33 +5,36 @@ import Banner from '../../components/Banner/Banner';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { Link, useNavigate } from 'react-router-dom';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify'; // Import Toastify components
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
-    emailOrPhone: '',
+    phone: '',
     password: '',
   });
 
   const [errors, setErrors] = useState({});
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const validate = () => {
     const newErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10}$/;
+    const phoneRegex = /^\+91[0-9]{10}$/;
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
-    if (!formData.emailOrPhone.trim()) {
-      newErrors.emailOrPhone = 'Email or Phone Number is required';
-    } else if (!emailRegex.test(formData.emailOrPhone) && !phoneRegex.test(formData.emailOrPhone)) {
-      newErrors.emailOrPhone = 'Enter a valid email or phone number';
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone Number is required';
+    } else if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = 'Enter a valid 10-digit phone number starting with +91';
     }
 
     if (!formData.password.trim()) {
@@ -47,8 +50,11 @@ const SignUp = () => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
-      console.log('Form Submitted:', formData);
-      navigate('/login');
+      // Assuming signup is successful
+      toast.success('Signed up successfully!'); // Show success notification
+      setTimeout(() => {
+        navigate('/login'); // Redirect to login after 3 seconds
+      }, 3000);
     } else {
       setErrors(validationErrors);
     }
@@ -64,6 +70,7 @@ const SignUp = () => {
 
   return (
     <>
+      <ToastContainer /> {/* Include ToastContainer for notifications */}
       <Banner />
       <Navbar />
       <div className="signup-container">
@@ -91,15 +98,17 @@ const SignUp = () => {
               />
               {errors.name && <p className="error-message">{errors.name}</p>}
 
-              <input
-                type="text"
-                name="emailOrPhone"
-                placeholder="Email or Phone Number"
-                className="form-input"
-                value={formData.emailOrPhone}
-                onChange={handleChange}
+              <PhoneInput
+                international
+                defaultCountry="IN"
+                countryCallingCodeEditable={false}
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={(value) => setFormData({ ...formData, phone: value })}
+                countries={['IN']}
+                className="form-input phone-input"
               />
-              {errors.emailOrPhone && <p className="error-message">{errors.emailOrPhone}</p>}
+              {errors.phone && <p className="error-message">{errors.phone}</p>}
 
               <div className="password-container">
                 <input
@@ -118,11 +127,6 @@ const SignUp = () => {
 
               <button type="submit" className="create-account-button">
                 Create Account
-              </button>
-
-              <button className="google-signup-button">
-                {/* <img src="https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/image8-2.jpg?width=595&height=400&name=image8-2.jpg" alt="Google" className="google-icon" /> */}
-                Sign up with Google
               </button>
 
               <p className="login-link">

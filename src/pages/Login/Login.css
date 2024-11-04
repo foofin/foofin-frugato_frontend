@@ -56,6 +56,29 @@
   border-bottom: 2px solid blue; /* Changes underline color on focus */
 }
 
+/* In your Login.css or relevant stylesheet */
+/* Add this to your existing CSS */
+
+.phone-input input {
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove shadow */
+  padding: 8px 0; /* Adjust padding */
+}
+
+/* Adjust the form input styles if necessary */
+.form-input {
+  border: none; /* Remove border for other inputs */
+  border-bottom: 2px solid gray; /* Optional: Keep underline */
+  outline: none;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 16px;
+}
+
+
+
 /* Button styling */
 .loginbutton {
   background-color: #ff4b4b; /* Main button color */
@@ -73,6 +96,8 @@
 .loginbutton:hover {
   background-color: #e63939; /* Darker shade on hover */
 }
+
+
 
 .google-login-button {
   display: flex;
